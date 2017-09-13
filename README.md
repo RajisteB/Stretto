@@ -8,7 +8,7 @@ Description ...
 - [x] create file and init git repo
 - [x] init Rails app
 - [x] install/setup Devise for auth
-- [x] config routes, controller and views to prelim test routes
+- [x] config routes, controller and views for initial test
 - [x] confirm server and view is working
 - [] config user auth routes and views
 - [] test user auth
