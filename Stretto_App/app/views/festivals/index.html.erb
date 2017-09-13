@@ -1,6 +1,25 @@
 <h1>Festivals Index</h1>
 
-<%= data.each do |e| %>
-    <%= e %>
-
+<% @res[:events].each do |e| %>
+        <% e[:performers].each do |p| %>
+    <div>
+        <div>
+            <% if p[:image] === nil %>
+                <img src="https://cdn.dealspotr.com/ds-images/articles/seatgeek-vs-stubhub-vs-ticket-liquidator-vs-vividseats.jpg" />
+            <% else %>
+                <img src=<%= p[:image] %> />
+            <% end %>
+        </div>
+        <h4>Title:</h4>
+            <%= e[:short_title] %>
+        <h4>Location:</h4>
+            <%= e[:venue][:display_location] %>
+        <h4>Date:</h4>
+            <%= e[:datetime_local].to_date.strftime("%B %d, %Y") %>
+        <h4>Perfomers</h4>
+            <div><%= p[:short_name]%></div>
+            <br>
+        <% end %>
+    </div>
+    <br>
 <% end %>
