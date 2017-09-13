@@ -16,7 +16,7 @@ Description ...
 ### 2. API's & Routing
 - [x] config festivals routes 
 - [x] test SeatGeek API via Postman
-- [] gem install HTTP Party
+- [x] gem install HTTP Party
 - [] config HTTP party via controller
 - [] test JSON responses and views
 
