@@ -1,15 +1,19 @@
 require 'Httparty'
+require 'Wikipedia'
 
 class FestivalsController <ApplicationController
     include HTTParty
+    include Wikipedia
+        
 
     def home
-    
+        bee = Wikipedia.find('bee')
+        @bee_pic = bee.image_urls[0]
     end
 
     def index
         @seatgeek = Rails.application.secrets.seat_geek_api_key
-        response = HTTParty.get("https://api.seatgeek.com/2/events?type=music_festival&client_id=#{@seatgeek}") 
+        response = HTTParty.get("https://api.seatgeek.com/2/events?q=music+festival&client_id=#{@seatgeek}") 
         @res = JSON.parse response.to_s, symbolize_names: true
     end
 

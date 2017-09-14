@@ -1,14 +1,21 @@
 <h2>This is the single festival page</h2>
-
+<%= @res %>
+<br>
 <div><img src=<%= @res[:performers][0][:image] %> /></div>
 <br>
 <%= @res[:short_title]%>
 <br>
 <%= @res[:venue][:display_location] %>
+<%= @res[:venue][:address] %>
+<%= @res[:venue][:name] %>
 <br>
-<%= @res[:performers][1] %>
 <%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
 <br>
+<br>
+<% @res[:performers].each do |p|%>
+    <div><%= p[:short_name]%></div>
+    <br>
+<% end %>
 <br>
 <h1>Recommendations</h1>
 <% @rec[:recommendations].each do |r| %>

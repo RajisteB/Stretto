@@ -8,15 +8,14 @@
         <br>    
         <div><%= e[:short_title]%></div>
         <br>
+        <div><%= e[:venue][:name]%></div>
+        <br>
         <div><%= e[:venue][:display_location]%></div>
         <br>
-        <% e[:performers].each do |p|%>
-            <div><%= p[:short_name]%></div>
-        <% end %>
-        <div></div>
-        <br>
-        <div><%= e[:datetime_local].to_date.strftime("%B %d, %Y") %></div>
+        <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
+        <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
         <%= link_to 'MORE', festival_path(e[:id]) %>
+        <br>
         <br>
 <% end %>
 
