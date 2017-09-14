@@ -7,8 +7,8 @@ class FestivalsController <ApplicationController
         
 
     def home
-        bee = Wikipedia.find('bee')
-        @bee_pic = bee.image_urls[0]
+        bee = Wikipedia.find('Vogue Theatre')
+        @bee_pic = bee.image_urls
     end
 
     def index

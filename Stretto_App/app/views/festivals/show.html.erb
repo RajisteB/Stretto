@@ -1,19 +1,30 @@
 <h2>This is the single festival page</h2>
-<%= @res %>
 <br>
 <div><img src=<%= @res[:performers][0][:image] %> /></div>
 <br>
-<%= @res[:short_title]%>
+<%= @res[:title]%>
+<br>
+<br>
+<img src=<%= Wikipedia.find(@res[:venue][:display_location]).image_urls[1]%> style="height: 40%; 
+    width: 40%;" />
+<br>
+<%= @res[:venue][:name] %>
 <br>
 <%= @res[:venue][:display_location] %>
 <%= @res[:venue][:address] %>
-<%= @res[:venue][:name] %>
 <br>
 <%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
 <br>
+<a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+<br>
 <br>
 <% @res[:performers].each do |p|%>
-    <div><%= p[:short_name]%></div>
+    <% p[:genres].to_a.each do |g| %>
+        <%= g[:name] %>
+    <% end %>
+    <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
+        <div><%= p[:short_name]%></div>
+    <% end %>
     <br>
 <% end %>
 <br>

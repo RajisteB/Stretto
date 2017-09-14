@@ -21,8 +21,8 @@ Description ...
 - [x] test JSON responses and views
 - [x] config & test single concert route and views
 - [x] config views to display correct api data
-- [] gem install wikipedia-client
-- [] config and test relevant views
+- [x] gem install wikipedia-client
+- [x] config and test relevant views
 - [] config and test google maps api
 - [] display google maps via api & lat-lon of event venue
 
