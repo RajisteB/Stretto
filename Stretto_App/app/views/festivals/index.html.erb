@@ -1,26 +1,22 @@
 <h1>Festivals Index</h1>
-
 <% @res[:events].each do |e| %>
-        <% e[:performers].each do |p| %>
-    <div>
-        <div>
-            <% if p[:image] === nil %>
-                <img src="https://cdn.dealspotr.com/ds-images/articles/seatgeek-vs-stubhub-vs-ticket-liquidator-vs-vividseats.jpg" />
-            <% else %>
-                <img src=<%= p[:image] %> />
-            <% end %>
-        </div>
-        <h4>Title:</h4>
-            <%= e[:short_title] %>
-        <h4>Location:</h4>
-            <%= e[:venue][:display_location] %>
-        <h4>Date:</h4>
-            <%= e[:datetime_local].to_date.strftime("%B %d, %Y") %>
-        <h4>Perfomers</h4>
+    <% if e[:performers][0][:images][:huge] === nil %>
+        <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" />
+    <% else %>
+        <img src=<%= e[:performers][0][:images][:huge] %> />
+    <% end %>
+        <br>    
+        <div><%= e[:short_title]%></div>
+        <br>
+        <div><%= e[:venue][:display_location]%></div>
+        <br>
+        <% e[:performers].each do |p|%>
             <div><%= p[:short_name]%></div>
-            <br>
-            <%= link_to 'MORE', festival_path(e[:id]) %>
         <% end %>
-    </div>
-    <br>
+        <div></div>
+        <br>
+        <div><%= e[:datetime_local].to_date.strftime("%B %d, %Y") %></div>
+        <%= link_to 'MORE', festival_path(e[:id]) %>
+        <br>
 <% end %>
+
