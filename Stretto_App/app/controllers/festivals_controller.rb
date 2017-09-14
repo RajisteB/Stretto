@@ -19,6 +19,7 @@ class FestivalsController <ApplicationController
     def show
         params[:id]
         @seatgeek = Rails.application.secrets.seat_geek_api_key
+        @map = Rails.application.secrets.google_maps_api_key
         response = HTTParty.get("https://api.seatgeek.com/2/events/#{params[:id]}?client_id=#{@seatgeek}") 
         @res = JSON.parse response.to_s, symbolize_names: true
         @performer_id = @res[:performers][0][:id]

@@ -7,20 +7,20 @@
         <img src=<%= e[:performers][0][:images][:huge] %> />
     <% end %>
         <br>    
-        <div><%= e[:short_title]%></div>
+        <div><%= e[:title]%></div>
         <br>
         <div><%= e[:venue][:name]%></div>
-        <br>
+        <div><%= e[:venue][:display_location]%></div>
         <% if e[:stats][:average_price] === nil %>
-            AVG PRICE: <p>Not Available</p>
+            Avg Price: <p>Not Available</p>
         <% else %>
-            AVG PRICE: $<%= e[:stats][:average_price]%>
+            Avg Price: $<%= e[:stats][:average_price]%>
         <% end %>
         <br>
-        <div><%= e[:venue][:display_location]%></div>
         <br>
         <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
         <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
+        <br>
         <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
         <br>
         <%= link_to 'MORE', festival_path(e[:id]) %>

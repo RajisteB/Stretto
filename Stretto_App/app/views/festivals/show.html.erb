@@ -10,6 +10,10 @@
 <%= @res[:venue][:display_location] %>
 <%= @res[:venue][:address] %>
 <br>
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=15&size=600x300&maptype=roadmap
+&markers=size:mid%7Ccolor:0xFFFF00%7C<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>
+&key=AIzaSyBRhqTqNO6T-XZ-tZ2TJjPidP3QcNX5yq4" />
+<br>
 <%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
 <br>
 <a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
