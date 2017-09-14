@@ -19,6 +19,7 @@
         <h4>Perfomers</h4>
             <div><%= p[:short_name]%></div>
             <br>
+            <%= link_to 'MORE', festival_path(e[:id]) %>
         <% end %>
     </div>
     <br>

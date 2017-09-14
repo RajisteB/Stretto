@@ -17,8 +17,9 @@ Description ...
 - [x] config festivals routes 
 - [x] test SeatGeek API via Postman
 - [x] gem install HTTP Party
-- [] config HTTP party via controller
-- [] test JSON responses and views
+- [x] config HTTP party via controller
+- [x] test JSON responses and views
+- [x] config & test single concert route and views
 
 ### 3. Database
 - [] add table for user favorites
