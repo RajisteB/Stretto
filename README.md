@@ -23,8 +23,8 @@ Description ...
 - [x] config views to display correct api data
 - [x] gem install wikipedia-client
 - [x] config and test relevant views
-- [] config and test google maps api
-- [] display google maps via api & lat-lon of event venue
+- [x] config and test google maps api
+- [x] display google maps via lat-lon of event venue
 
 
 ### 3. Database
@@ -35,7 +35,16 @@ Description ...
 - [] rails c to test migrations/seeds
 
 ### 4. CRUD Functionality
-- [] create user route to favorites page
+- [] create user route to user/favorites page
 - [] config save and delete functionality
-- [] 
+- [] test and confirm user favorites get added to db
+- [] test and confirm user favorites displayed on user page
+
+
+### 5. Styling
+- [x] install MDL - Material Design Lite
+- [x] create navbar partial
+- [] create navbar w/ tabs partial for index page
+- [] style cards for each individual event
+- [] layout cards via MDL grid
 

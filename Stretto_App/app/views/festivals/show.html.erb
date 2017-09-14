@@ -10,7 +10,7 @@
 <%= @res[:venue][:display_location] %>
 <%= @res[:venue][:address] %>
 <br>
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=15&size=600x300&maptype=roadmap
+<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=12&size=600x300&maptype=hybrid
 &markers=size:mid%7Ccolor:0xFFFF00%7C<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>
 &key=AIzaSyBRhqTqNO6T-XZ-tZ2TJjPidP3QcNX5yq4" />
 <br>
@@ -20,9 +20,6 @@
 <br>
 <br>
 <% @res[:performers].each do |p|%>
-    <% p[:genres].to_a.each do |g| %>
-        <%= g[:name] %>
-    <% end %>
     <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
         <div><%= p[:short_name]%></div>
     <% end %>
