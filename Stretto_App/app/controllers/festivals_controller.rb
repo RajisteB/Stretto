@@ -7,13 +7,12 @@ class FestivalsController <ApplicationController
         
 
     def home
-        bee = Wikipedia.find('Vogue Theatre')
-        @bee_pic = bee.image_urls
+
     end
 
     def index
         @seatgeek = Rails.application.secrets.seat_geek_api_key
-        response = HTTParty.get("https://api.seatgeek.com/2/events?q=music+festival&client_id=#{@seatgeek}") 
+        response = HTTParty.get("https://api.seatgeek.com/2/events?sort=score.desc&q=music+festival&per_page=50&client_id=#{@seatgeek}") 
         @res = JSON.parse response.to_s, symbolize_names: true
     end
 
