@@ -29,6 +29,7 @@ body {
     display: flex;
     width: 100%;
     overflow: auto;
+    height: 75vh;
 }
 
  .festival-card-container {
@@ -64,6 +65,10 @@ body {
 
 .festival-info{ 
     padding-left: 18px;
+}
+
+.festival-info h5 {
+    font-weight: 400;
 }
 
 .festival-time{

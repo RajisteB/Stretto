@@ -43,7 +43,7 @@
               </div>
               <br>
               <div class="festival-info">
-                <div><%= e[:venue][:name]%></div>
+                <div><h5><%= e[:venue][:name]%></h5></div>
                 <div><%= e[:venue][:display_location]%></div>
                 <% if e[:stats][:average_price] === nil %>
                     Avg Price: Not Available
@@ -56,6 +56,11 @@
               <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%a %b %d, %Y") %></div>
               <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
               <br>
+              <div class="tickets-link">
+                <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    BUY TICKETS
+                </a>
+              </div>
               <div class="tickets-link">
                 <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     BUY TICKETS
