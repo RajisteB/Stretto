@@ -1,41 +1,66 @@
-<%= render "partials/navbar"%>
-<br>
-<br>
-<br>
-<h2>This is the single festival page</h2>
-<br>
-<div><img src=<%= @res[:performers][0][:image] %> /></div>
-<br>
-<%= @res[:title]%>
-<br>
-<br>
-<%= @res[:venue][:name] %>
-<br>
-<%= @res[:venue][:display_location] %>
-<%= @res[:venue][:address] %>
-<br>
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=12&size=600x300&maptype=hybrid
-&markers=size:mid%7Ccolor:0xFFFF00%7C<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>
-&key=AIzaSyBRhqTqNO6T-XZ-tZ2TJjPidP3QcNX5yq4" />
-<br>
-<%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
-<br>
-<a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
-<br>
-<br>
-<% @res[:performers].each do |p|%>
-    <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
-        <div><%= p[:short_name]%></div>
-    <% end %>
-    <br>
-<% end %>
-<br>
-<h1>Recommendations</h1>
-<% @rec[:recommendations].each do |r| %>
-    <div><img src=<%= r[:performer][:image] %> /></div>
-    <div><%= r[:performer][:short_name] %></div>
-    <br>
-    
-<% end %>
-
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+        <h2>This is the single festival page</h2>
+        <br>
+        <div><img src=<%= @res[:performers][0][:image] %> /></div>
+        <br>
+        <%= @res[:title]%>
+        <br>
+        <br>
+        <%= @res[:venue][:name] %>
+        <br>
+        <%= @res[:venue][:display_location] %>
+        <%= @res[:venue][:address] %>
+        <br>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=12&size=600x300&maptype=hybrid
+        &markers=size:mid%7Ccolor:0xFFFF00%7C<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>
+        &key=AIzaSyBRhqTqNO6T-XZ-tZ2TJjPidP3QcNX5yq4" />
+        <br>
+        <%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
+        <br>
+        <a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+        <br>
+        <br>
+        <% @res[:performers].each do |p|%>
+            <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
+                <div><%= p[:short_name]%></div>
+            <% end %>
+            <br>
+        <% end %>
+        <br>
+        <h1>Recommendations</h1>
+        <% @rec[:recommendations].each do |r| %>
+            <div><img src=<%= r[:performer][:image] %> /></div>
+            <div><%= r[:performer][:short_name] %></div>
+            <br>
+            
+        <% end %>
+    </div>
+  </main>
+</div>
 

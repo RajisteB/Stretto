@@ -16,17 +16,9 @@
  
 
 
- * {
-     font-family: 'Roboto', sans-serif;
- }
+
 
 /* Navigation Bar to top of page */
-body {
-    margin: 0 auto;
-}
-
-
-.mdl-layout__container {
-   top: -8px;
-   z-index: -1;
-}
+/* .mdl-layout__container {
+    top: 0;
+} */

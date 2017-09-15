@@ -1,34 +1,60 @@
-<%= render "partials/navbar"%>
-<br>
-<br>
-<br>
-<h1>Festivals Index</h1>
-<% @res[:events].each do |e| %>
-    <% if e[:performers][0][:images][:huge] === nil %>
-        <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" 
-            style="width:20%;"/>
-    <% else %>
-        <img src=<%= e[:performers][0][:images][:huge] %> />
-    <% end %>
-        <br>    
-        <div><%= e[:title]%></div>
-        <br>
-        <div><%= e[:venue][:name]%></div>
-        <div><%= e[:venue][:display_location]%></div>
-        <% if e[:stats][:average_price] === nil %>
-            Avg Price: <p>Not Available</p>
-        <% else %>
-            Avg Price: $<%= e[:stats][:average_price]%>
-        <% end %>
-        <br>
-        <br>
-        <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
-        <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
-        <br>
-        <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
-        <br>
-        <%= link_to 'MORE', festival_path(e[:id]) %>
-        <br>
-        <br>
-<% end %>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <h1>Festivals Index</h1>
+      <% @res[:events].each do |e| %>
+          <% if e[:performers][0][:images][:huge] === nil %>
+              <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" 
+                  style="width:20%;"/>
+          <% else %>
+              <img src=<%= e[:performers][0][:images][:huge] %> />
+          <% end %>
+              <br>    
+              <div><%= e[:title]%></div>
+              <br>
+              <div><%= e[:venue][:name]%></div>
+              <div><%= e[:venue][:display_location]%></div>
+              <% if e[:stats][:average_price] === nil %>
+                  Avg Price: <p>Not Available</p>
+              <% else %>
+                  Avg Price: $<%= e[:stats][:average_price]%>
+              <% end %>
+              <br>
+              <br>
+              <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
+              <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
+              <br>
+              <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
+              <br>
+              <%= link_to 'MORE', festival_path(e[:id]) %>
+              <br>
+              <br>
+      <% end %>
+    </div>
+  </main>
+</div>
 
