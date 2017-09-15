@@ -38,29 +38,29 @@
                     background-repeat: no-repeat; background-size: cover;'
                 <% end %>
               >
-              <div class="festival-title"><h5><%= e[:title]%></h5></div>
+              <div class="festival-title">
+              <h5><%= e[:title]%></h5></div>
               </div>
+              <br>
+              <div class="festival-info">
+                <div><%= e[:venue][:name]%></div>
+                <div><%= e[:venue][:display_location]%></div>
+                <% if e[:stats][:average_price] === nil %>
+                    Avg Price: Not Available
+                <% else %>
+                    Avg Price: $<%= e[:stats][:average_price].round%>.00
+                <% end %>
+              </div>
+              <br>
 
-              <div><%= e[:venue][:name]%></div>
-              <div><%= e[:venue][:display_location]%></div>
-              <% if e[:stats][:average_price] === nil %>
-                  Avg Price: Not Available
-              <% else %>
-                  Avg Price: $<%= e[:stats][:average_price].round%>.00
-              <% end %>
+              <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%a %b %d, %Y") %></div>
+              <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
               <br>
-              <br>
-              <div><%= e[:datetime_local].to_time.strftime("%a %b %d, %Y") %></div>
-              <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
-              <br>
-                <a a>
-              <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  BUY TICKETS
-              </a>
-              <br>
-              <%= link_to 'MORE', festival_path(e[:id]) %>
-              <br>
-              <br>
+              <div class="tickets-link">
+                <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    BUY TICKETS
+                </a>
+              </div>
             </div>
         <% end %>
       </div>

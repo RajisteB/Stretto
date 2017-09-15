@@ -58,6 +58,18 @@ body {
     margin: 2px;
 } 
 
+.tickets-link {
+    border-top: 2px solid lightgray;
+}
+
+.festival-info{ 
+    padding-left: 18px;
+}
+
+.festival-time{
+    padding-left: 18px;
+}
+
 
 
 
