@@ -43,8 +43,8 @@ Description ...
 
 ### 5. Styling
 - [x] install MDL - Material Design Lite
-- [x] create navbar partial
+- [x] create navbar
 - [] create navbar w/ tabs partial for index page
-- [] style cards for each individual event
+- [x] style cards for each individual event
 - [] layout cards via MDL grid
 

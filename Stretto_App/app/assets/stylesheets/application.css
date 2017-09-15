@@ -19,6 +19,8 @@
 
 
 /* Navigation Bar to top of page */
-/* .mdl-layout__container {
-    top: 0;
-} */
+body {
+    margin: 0 auto;
+}
+
+
