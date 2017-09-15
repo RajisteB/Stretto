@@ -29,33 +29,37 @@
       <div class="festival-card">
         <% @res[:events].each do |e| %>
             <div class="festival-card-container">
-            <% if e[:performers][0][:images][:huge] === nil %>
-                <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" 
-                    style="width:20%;"/>
-            <% else %>
-                <img src=<%= e[:performers][0][:images][:huge] %> />
-            <% end %>
-                <br>    
-                <div><%= e[:title]%></div>
-                <br>
-                <div><%= e[:venue][:name]%></div>
-                <div><%= e[:venue][:display_location]%></div>
-                <% if e[:stats][:average_price] === nil %>
-                    Avg Price: Not Available
+              <div class="festival-card-image-tile"
+                <% if e[:performers][0][:images][:huge] === nil %>
+                    style='background-image: url("https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg"); 
+                    background-repeat: no-repeat; background-size: cover;' 
                 <% else %>
-                    Avg Price: $<%= e[:stats][:average_price].round%>.00
+                    style='background-image: url(<%= e[:performers][0][:images][:huge] %>); 
+                    background-repeat: no-repeat; background-size: cover;'
                 <% end %>
-                <br>
-                <br>
-                <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
-                <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
-                <br>
-                <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
-                <br>
-                <%= link_to 'MORE', festival_path(e[:id]) %>
-                <br>
-                <br>
-                </div>
+              >
+              </div>
+              <br>    
+              <div><%= e[:title]%></div>
+              <br>
+              <div><%= e[:venue][:name]%></div>
+              <div><%= e[:venue][:display_location]%></div>
+              <% if e[:stats][:average_price] === nil %>
+                  Avg Price: Not Available
+              <% else %>
+                  Avg Price: $<%= e[:stats][:average_price].round%>.00
+              <% end %>
+              <br>
+              <br>
+              <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
+              <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
+              <br>
+              <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
+              <br>
+              <%= link_to 'MORE', festival_path(e[:id]) %>
+              <br>
+              <br>
+            </div>
         <% end %>
       </div>
     </div>

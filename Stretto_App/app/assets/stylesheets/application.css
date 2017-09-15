@@ -32,8 +32,15 @@ body {
     overflow: auto;
 }
 
-.festival-card-container {
+ .festival-card-container {
     border: 2px solid red;
+    background: #FFF;
     min-width: 412px;
-}
+    margin: 4px;
+} 
+
+ .festival-card-image-tile {
+    width: 100%;
+    height: 170px;
+} 
 
