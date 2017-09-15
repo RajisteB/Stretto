@@ -21,6 +21,18 @@
 /* Navigation Bar to top of page */
 body {
     margin: 0 auto;
+    background: #F5F5F5;
 }
 
+.festival-card {
+    border: 2px solid blue;
+    display: flex;
+    width: 100%;
+    overflow: auto;
+}
+
+.festival-card-container {
+    border: 2px solid red;
+    min-width: 412px;
+}
 

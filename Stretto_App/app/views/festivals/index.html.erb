@@ -24,43 +24,40 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-  <h1>Festivals Index</h1>
-  <% @res[:events].each do |e| %>
-  <br>
     <div class="page-content">
-      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <div class="mdl-card__title">
-          <% if e[:performers][0][:images][:huge] === nil %>
-              <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" 
-                  style="width:20%;"/>
-          <% else %>
-              <img src=<%= e[:performers][0][:images][:huge] %> />
-          <% end %>
-        </div>
-          <h3 class="mdl-card__title-text"><%= e[:title]%></h3>
-        <div class="mdl-card__supporting-text">
-          <div><%= e[:venue][:name]%></div>
-          <div><%= e[:venue][:display_location]%></div>
-          <% if e[:stats][:average_price] === nil %>
-              Avg Price: <p>Not Available</p>
-          <% else %>
-              Avg Price: $<%= e[:stats][:average_price]%>
-          <% end %>
-          <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
-          <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=<%=e[:url] %> target="_blank">
-            Buy Tickets
-          </a>
-        </div>
-        <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=<%=festival_path(e[:id]) %> target="_blank">
-            Learn More
-          </a>
-        </div>
+      <h1>Festivals Index</h1>
+      <div class="festival-card">
+        <% @res[:events].each do |e| %>
+            <div class="festival-card-container">
+            <% if e[:performers][0][:images][:huge] === nil %>
+                <img src="https://d49r1np2lhhxv.cloudfront.net/www/photos/EXITFestival2017_V1_1bxm6p2.jpg" 
+                    style="width:20%;"/>
+            <% else %>
+                <img src=<%= e[:performers][0][:images][:huge] %> />
+            <% end %>
+                <br>    
+                <div><%= e[:title]%></div>
+                <br>
+                <div><%= e[:venue][:name]%></div>
+                <div><%= e[:venue][:display_location]%></div>
+                <% if e[:stats][:average_price] === nil %>
+                    Avg Price: Not Available
+                <% else %>
+                    Avg Price: $<%= e[:stats][:average_price].round%>.00
+                <% end %>
+                <br>
+                <br>
+                <div><%= e[:datetime_local].to_time.strftime("%a %b %d %Y") %></div>
+                <div><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
+                <br>
+                <a href=<%=e[:url] %> target="_blank">BUY TICKETS</a>
+                <br>
+                <%= link_to 'MORE', festival_path(e[:id]) %>
+                <br>
+                <br>
+                </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
