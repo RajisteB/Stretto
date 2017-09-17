@@ -63,8 +63,8 @@
                       <span>starting at: $<%= e[:stats][:lowest_price].round%>.00</span>
                   <% end %>
                 
-                <div class="tickets-link mdl-color--primary">
-                  <a href=<%=festivals_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent">
+                <div class="tickets-link" id="link-btn">
+                  <a href=<%=festivals_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent mdl-color--primary">
                       LEARN MORE
                   </a>
                 </div>

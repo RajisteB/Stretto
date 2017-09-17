@@ -63,7 +63,7 @@ body {
     min-width: 312px;
     margin: 12px;
     border-radius: 1%;
-    height: 475px;
+    height: 485px;
 } 
 
 /* Festival image and title */
@@ -141,5 +141,10 @@ body {
     text-align: center;
     opacity: 0.80;
 }
+ 
+#link-btn a {
+    margin-top: 10px;
+}
+
 
 
