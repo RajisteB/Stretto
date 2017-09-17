@@ -37,34 +37,37 @@
                     style='background-image: url(<%= e[:performers][0][:images][:huge] %>); 
                     background-repeat: no-repeat; background-size: cover;'
                 <% end %>
-              >
-              <div class="festival-title">
-              <h5><%= e[:title]%></h5></div>
+                >
+                <div class="festival-title">
+                  <h5><%= e[:title]%></h5>
+                </div>
+                <div class="overlay mdl-color--primary"></div>
               </div>
-              <br>
               <div class="festival-info">
                 <div><h5><%= e[:venue][:name]%></h5></div>
-                <div><%= e[:venue][:display_location]%></div>
-                <% if e[:stats][:average_price] === nil %>
-                    Avg Price: Not Available
-                <% else %>
-                    Avg Price: $<%= e[:stats][:average_price].round%>.00
-                <% end %>
+                <div class="festival-location mdl-color-text--accent">
+                  <%= e[:venue][:display_location]%>
+                </div>
               </div>
-              <br>
 
-              <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%a %b %d, %Y") %></div>
-              <div class="festival-time"><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
+              <div class="festival-time mdl-color-text--accent"><%= e[:datetime_local].to_time.strftime("%a %b %d, %Y") %></div>
+              <div class="festival-time mdl-color-text--accent"><%= e[:datetime_local].to_time.strftime("%-I:%M %p") %></div>
               <br>
               <div class="tickets-link">
                 <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                     BUY TICKETS
                 </a>
-              </div>
-              <div class="tickets-link">
-                <a href=<%=e[:url] %> target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    BUY TICKETS
-                </a>
+                <% if e[:stats][:average_price] === nil %>
+                      <span>Price: Not Available</span>
+                  <% else %>
+                      <span>starting at: $<%= e[:stats][:lowest_price].round%>.00</span>
+                  <% end %>
+                
+                <div class="tickets-link mdl-color--primary">
+                  <a href=<%=festivals_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent">
+                      LEARN MORE
+                  </a>
+                </div>
               </div>
             </div>
         <% end %>

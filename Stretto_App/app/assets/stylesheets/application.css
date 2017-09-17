@@ -13,69 +13,133 @@
  *= require_tree .
  *= require_self
  */
- 
+
+ @import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+
+/* MDL modifications */
+
+.mdl-layout__drawer-button i {
+    color: cyan;
+}
+
+.mdl-layout-title a {
+    text-decoration: none;
+    color: white;
+    font-family: "Lobster", cursive;
+    font-size: 26pt;
+    font-weight: 100;
+}
+
+.mdl-navigation a {
+    font-size: 12pt;
+    font-weight: 100;  
+    letter-spacing: 2px;
+}
 
 
 
 
-/* Navigation Bar to top of page */
 body {
     margin: 0 auto;
-    background: #F5F5F5;
+    background: rgba(0, 0, 0, 0.90);
     font-family: "Roboto", sans-serif;
+    color: white;
 }
+
+/* Card and container */
 
 .festival-card {
     display: flex;
     width: 100%;
     overflow: auto;
     height: 75vh;
+    border-radius: 1%;
 }
 
  .festival-card-container {
-    background: #FFF;
-    min-width: 412px;
-    margin: 8px;
+    background: #1e1f21;
+    min-width: 312px;
+    margin: 12px;
+    border-radius: 1%;
+    height: 475px;
 } 
+
+/* Festival image and title */
 
  .festival-card-image-tile {
     width: 100%;
-    height:300px;
+    height: 250px;
     position: relative;
+    border-radius: 1%;
 } 
 
 .festival-title {
     width: 100%;
     background: black;
-    opacity: .8;
+    opacity: .7;
+    z-index: 2;
     position: absolute;
     bottom: 0;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
+}
+
  .festival-title h5 {
-    color: white;
-    font-size: 20pt;
+    color: rgba(250, 250, 250, 1);
+    font-size: 17pt;
     font-weight: 100;
     margin: 2px;
-} 
-
-.tickets-link {
-    border-top: 2px solid lightgray;
 }
+
+
+
+/* Festival info */
 
 .festival-info{ 
     padding-left: 18px;
+    font-size: 11.5pt;
 }
 
 .festival-info h5 {
-    font-weight: 400;
+    font-weight: 100;
+    color: rgba(250, 250, 250, 0.8);
 }
 
 .festival-time{
     padding-left: 18px;
+    opacity: 0.4;
+}
+
+.festival-location {
+    opacity: 0.4; 
+    font-weight: 100;
 }
 
 
+/* Learn more & tickets link */
 
+.tickets-link {
+    border-top: 2px solid rgba(250, 250, 250, 0.05);
+    font-weight: 100;
+}
+
+
+.tickets-link span {
+    font-size: 9pt;
+    font-weight: 100;
+    color: rgba(250, 250, 250, 0.4);
+    margin-left: 60px;
+}
+
+.tickets-link:nth-child(3) {
+    text-align: center;
+    opacity: 0.80;
+}
 
 
