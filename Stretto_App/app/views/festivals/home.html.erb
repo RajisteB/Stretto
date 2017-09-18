@@ -37,19 +37,19 @@
                   <h2><i>Stretto</i></h2>
                 </div>
                 <div class="user-actions-sign-up">
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">SIGN-UP</button>
+                  <%= button_to "SIGN-UP", new_user_registration_path, method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary button" %>
                 </div>
                 <div class="user-actions-acct">
                   <h5>-- Already have an account? --</h5>
                 </div>
                 <div class="user-actions-login">
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">LOGIN</button>
+                  <%= button_to "LOGIN", new_user_session_path, method: :get, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent button" %>
                 </div>
               </div>
             </div>
             <div class="right-container">
               <h2>Find the right festival, right now</h2>
-              <h4>From rap, rock, to country or jazz, search hundreds of festivals around the country...</h4>
+              <h4>Whether it's rap, rock, pop or jazz, search hundreds of festivals around the country...</h4>
               <div class="mission_one">
                 <div><i class="material-icons check-icon" style="font-size: 28px;">check_circle</i></div>
                 <div><h6>Search & discover live music you'll love</h6></div>

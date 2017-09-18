@@ -129,8 +129,8 @@ div:nth-child(1) > i {
     text-align: center;
 }
 
-.user-actions-login button,
-.user-actions-sign-up button {
+.user-actions-login .button,
+.user-actions-sign-up .button {
     width: 70%;
     letter-spacing: 2px;
 }
