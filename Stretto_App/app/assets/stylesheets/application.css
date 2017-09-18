@@ -433,6 +433,12 @@ div:nth-child(1) > i {
 .log-in-link {
     font-size: 14pt;
     margin-left: 5px;
+    padding-top: 5px;
 }
 
-
+.field {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    width: 60%;
+}

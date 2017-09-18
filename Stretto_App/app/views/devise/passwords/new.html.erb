@@ -1,16 +1,48 @@
-<h2>Forgot your password?</h2>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><%= link_to 'Stretto', root_path %> </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href=<%= festivals_path%>>Explore</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+<div class="sign-up-background">
+  <div class="sign-up-title">
+    <h2>Forgot your password?</h2>
+  </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
+  <div class="sign-up-container">
+  <div class="sign-up-frame">
+  <div class="email">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"><%= f.submit "Send me reset password email" %></button>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="log-in-link"><%= render "devise/shared/links" %></div>
+</div>
+</div>
+</div>
