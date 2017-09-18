@@ -38,7 +38,7 @@
     letter-spacing: 2px;
 }
 
-
+/* Site styling */
 
 
 body {
@@ -47,6 +47,100 @@ body {
     font-family: "Roboto", sans-serif;
     color: white;
 }
+
+/* Homepage styling */
+
+.home-pg-grid-flex {
+    width: 100%;
+    height: 92vh;
+    display: flex;
+}
+.side-intro {
+    width: 60vw;
+    height: 53vh;
+    margin: 0 auto;
+    margin-top: 11%;
+    display: flex;
+}
+.left-container {
+    height: 100%;
+    width: 50%;
+    border-right: 3px solid #e53935;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.right-container {
+    height: 100%;
+    width: 50%;
+    padding: 5px;
+}
+
+.coverr {
+    height: 100%;
+    width: 100%;
+    background-image: url("homepgparty.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.check-icon {
+    color: #e53935;
+}
+
+div:nth-child(1) > i {
+    margin-top: 40%;
+}
+
+.right-container h2,
+.right-container h4,
+.right-container h6 {
+    margin-left: 2%;
+    font-weight: 200;
+}
+
+.mission_one {
+    display: flex;
+    width: 85%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mission_two {
+   display: flex;
+    width: 75%;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 85%;
+    width: 100%;
+}
+
+.user-actions-login,
+.user-actions-sign-up {
+    width: 100%;
+    text-align: center;
+}
+
+.user-actions-login button,
+.user-actions-sign-up button {
+    width: 70%;
+    letter-spacing: 2px;
+}
+
+.user-actions-acct h5 {
+    color: rgba(250, 250, 250, 0.6);
+    font-size: 12pt;
+    font-weight: 200;
+}
+
 
 /* Card and container */
 
@@ -58,11 +152,23 @@ body {
 
  .festival-card-container {
     background: #1e1f21;
-    min-width: 312px;
+    min-width: 322px;
     margin: 12px;
     border-radius: 1%;
     height: 485px;
 } 
+
+#scroll-tab-1 > div > h1,
+#scroll-tab-2 > div > h1,
+#scroll-tab-3 > div > h1,
+#scroll-tab-4 > div > h1 {
+    width: 40%;
+    font-weight: 100;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 2px solid #c62828;
+
+}
 
 /* Festival image and title */
 
@@ -85,7 +191,7 @@ body {
 .overlay {
     height: 100%;
     width: 100%;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
  .festival-title h5 {
@@ -142,6 +248,7 @@ body {
  
 #link-btn a {
     margin-top: 10px;
+    letter-spacing: 2px;
 }
 
 
