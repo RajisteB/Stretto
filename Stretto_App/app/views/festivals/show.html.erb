@@ -32,15 +32,15 @@
           <div class="header-pic" style='background-image: url(<%= @res[:performers][0][:image] %>);
                 background-size: cover; background-repeat: no-repeat;' />
           </div>
+          <br>
           <h3><%= @res[:title]%></h3>
           <h3><%= @res[:venue][:name] %></h3>
           <h4><%= @res[:venue][:address] %></h4>
           <h4><%= @res[:venue][:display_location] %></h4>
-          <br>
           <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
           <br>
           <br>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--primary"><a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+          <button class="mdl-button mdl-js-button mdl-button--raised"><a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
           </button>
           <br>
           <br>

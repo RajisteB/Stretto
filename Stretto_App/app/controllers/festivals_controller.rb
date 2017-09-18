@@ -33,5 +33,8 @@ class FestivalsController <ApplicationController
         @rec = JSON.parse recommendation.to_s, symbolize_names: true
     end
 
+    def profile
+        
+    end
 
 end

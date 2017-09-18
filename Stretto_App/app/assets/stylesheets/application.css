@@ -263,11 +263,10 @@ div:nth-child(1) > i {
     margin: 0 auto;
     width: 40%;
     display: flex;
-    /* background-color: rgba(250, 250, 250, 0.05); */
-    background-image: url("https://images.pexels.com/photos/120247/pexels-photo-120247.jpeg?h=350&auto=compress&cs=tinysrgb");
+    background-color: rgba(250, 250, 250, 0.02); 
     background-size: cover;
     background-repeat: no-repeat;
-    height: 150%;
+    height: 80%;
     margin-top: 2%;
     flex-direction: column;
     border: 2px solid #009688;
@@ -275,6 +274,7 @@ div:nth-child(1) > i {
 
 .s-pg-layout button {
     font-size: 12pt;
+    background: black;
 }
 
 .s-pg-grid-flex {
