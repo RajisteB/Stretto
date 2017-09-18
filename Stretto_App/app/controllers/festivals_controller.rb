@@ -12,9 +12,9 @@ class FestivalsController <ApplicationController
 
     def index
         @seatgeek = Rails.application.secrets.seat_geek_api_key
-        response = HTTParty.get("https://api.seatgeek.com/2/events?sort=score.desc&q=music+festival&per_page=50&client_id=#{@seatgeek}") 
-        recent = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=50&client_id=#{@seatgeek}") 
-        near = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=50&geoip=true&client_id=#{@seatgeek}")
+        response = HTTParty.get("https://api.seatgeek.com/2/events?sort=score.desc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
+        recent = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
+        near = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&geoip=true&client_id=#{@seatgeek}")
         newly_announced = HTTParty.get("https://api.seatgeek.com/2/events?sort=announce_date.desc&q=music+festival&per_page=25&client_id=#{@seatgeek}")  
         @res = JSON.parse response.to_s, symbolize_names: true
         @recent = JSON.parse recent.to_s, symbolize_names: true

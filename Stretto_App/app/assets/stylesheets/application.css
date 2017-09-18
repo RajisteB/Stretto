@@ -145,4 +145,116 @@ body {
 }
 
 
+/* Single page styling */
+
+.header-pic {
+    width: 27vw;
+    height: 37vh;
+    margin-top: 20%;
+}
+
+.s-pg-layout {
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    background-color: rgba(250, 250, 250, 0.05);
+    height: 90%;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    line-height: 2px;
+    padding: 10px;
+    border: 2px solid #009688;
+}
+
+.s-pg-layout button {
+    font-size: 12pt;
+}
+
+.s-pg-grid-flex {
+    width: 96%;
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.recommendations {
+    width: 55%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendations h1 {
+    font-weight: 100;
+}
+
+
+.rec-info {
+    width: 20%;
+    height: 20%;
+    border: 2px solid #009688;
+}
+
+.s-artist-rec {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+
+.rec-artist-card {
+    width: 45%;
+    height: 30%;
+    padding: 6px;
+    font-weight: 100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rec-info {
+    width: 45%;
+    height: 90%;
+    font-weight: 200;
+    font-size: 16pt;
+    padding: 0 2px 0 2px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    line-height: 30px;
+    border-radius: 2%;
+}
+
+.rec-name {
+    width: 50%;
+    margin-left: 3px;
+    border-bottom: 1px solid #009688;
+}
+
+.rec-card-img {
+    width: 50%;
+    height: 90%;
+    background-size: cover;
+    border-radius: 2%;
+}
+
+.rec-overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+}
+
+.s-pg-layout h3, 
+.s-pg-layout h4 {
+    line-height: 2px;
+    font-weight: 100;
+}
+
+.s-pg-layout a {
+    margin: 20px;
+    text-decoration: none;
+}
 

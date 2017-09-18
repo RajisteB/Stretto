@@ -25,41 +25,50 @@
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
-        <h2>This is the single festival page</h2>
         <br>
-        <div><img src=<%= @res[:performers][0][:image] %> /></div>
-        <br>
-        <%= @res[:title]%>
-        <br>
-        <br>
-        <%= @res[:venue][:name] %>
-        <br>
-        <%= @res[:venue][:display_location] %>
-        <%= @res[:venue][:address] %>
-        <br>
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>&zoom=12&size=600x300&maptype=hybrid
-        &markers=size:mid%7Ccolor:0xFFFF00%7C<%= @res[:venue][:location][:lat] %>,<%= @res[:venue][:location][:lon] %>
-        &key=AIzaSyBRhqTqNO6T-XZ-tZ2TJjPidP3QcNX5yq4" />
-        <br>
-        <%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %>
-        <br>
-        <a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
-        <br>
-        <br>
-        <% @res[:performers].each do |p|%>
-            <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
-                <div><%= p[:short_name]%></div>
+        <div class"page-header">
+        <div class="s-pg-grid-flex">
+        <div class="s-pg-layout mdl-shadow--8dp">
+          <div class="header-pic" style='background-image: url(<%= @res[:performers][0][:image] %>);
+                background-size: cover; background-repeat: no-repeat;' />
+          </div>
+          <h3><%= @res[:title]%></h3>
+          <h3><%= @res[:venue][:name] %></h3>
+          <h4><%= @res[:venue][:address] %></h4>
+          <h4><%= @res[:venue][:display_location] %></h4>
+          <br>
+          <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
+          <br>
+          <br>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--primary"><a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+          </button>
+          <br>
+          <br>
+          <% @res[:performers].each do |p|%>
+              <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
+                  <div><%= p[:short_name]%></div>
+              <% end %>
+              <br>
+          <% end %>
+          <br>
+        </div>
+        <div class="recommendations">
+          <h1 class="mdl-color-text--accent">Recommendations</h1>
+          <div class="s-artist-rec">
+            <% @rec[:recommendations].each do |r| %>
+                  <div class="rec-artist-card">
+                    <div class="rec-card-img mdl-shadow--6dp" style='background-image: url(<%= r[:performer][:image] %>);' />
+                      <div class="rec-overlay mdl-color--accent"></div>
+                    </div>
+                    <div class="rec-info mdl-shadow--6dp">
+                      <div class="rec-name ">
+                        <%= r[:performer][:short_name] %>
+                      </div>
+                    </div>
+                  </div>
             <% end %>
-            <br>
-        <% end %>
-        <br>
-        <h1>Recommendations</h1>
-        <% @rec[:recommendations].each do |r| %>
-            <div><img src=<%= r[:performer][:image] %> /></div>
-            <div><%= r[:performer][:short_name] %></div>
-            <br>
-            
-        <% end %>
+          </div>
+        </div>
     </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
