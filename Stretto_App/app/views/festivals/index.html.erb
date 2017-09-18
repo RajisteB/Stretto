@@ -3,7 +3,7 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <span class="mdl-layout-title"><%= link_to 'Stretto', root_path %> </span>
     </div>
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -25,7 +25,7 @@
   <main class="mdl-layout__content">
     <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
       <div class="page-content">
-        <h1>Festivals Index</h1>
+        <h1>Most Popular</h1>
         <div class="festival-card">
           <% @res[:events].each do |e| %>
               <div class="festival-card-container mdl-shadow--4dp">
@@ -41,7 +41,7 @@
                   <div class="festival-title">
                     <h5><%= e[:title]%></h5>
                   </div>
-                  <div class="overlay mdl-color--primary"></div>
+                  <div class="overlay mdl-color--accent"></div>
                 </div>
                 <div class="festival-info">
                   <div><h5><%= e[:venue][:name]%></h5></div>
@@ -65,7 +65,7 @@
                   
                   <div class="tickets-link" id="link-btn">
                     <a href=<%=festival_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent mdl-color--primary">
-                        LEARN MORE
+                        INFO
                     </a>
                   </div>
                 </div>
@@ -78,7 +78,7 @@
     </section>
     <section class="mdl-layout__tab-panel" id="scroll-tab-2">
       <div class="page-content">
-          <h1>Festivals Index</h1>
+          <h1>Coming Soon</h1>
         <div class="festival-card">
           <% @recent[:events].each do |e| %>
               <div class="festival-card-container mdl-shadow--4dp">
@@ -94,7 +94,7 @@
                   <div class="festival-title">
                     <h5><%= e[:title]%></h5>
                   </div>
-                  <div class="overlay mdl-color--primary"></div>
+                  <div class="overlay mdl-color--accent"></div>
                 </div>
                 <div class="festival-info">
                   <div><h5><%= e[:venue][:name]%></h5></div>
@@ -118,7 +118,7 @@
                   
                   <div class="tickets-link" id="link-btn">
                     <a href=<%=festival_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent mdl-color--primary">
-                        LEARN MORE
+                        INFO
                     </a>
                   </div>
                 </div>
@@ -131,7 +131,7 @@
     </section>
     <section class="mdl-layout__tab-panel" id="scroll-tab-3">
       <div class="page-content">
-        <h1>Near Me</h1>
+        <h1>Concerts Near Me</h1>
         <div class="festival-card">
           <% @near[:events].each do |e| %>
               <div class="festival-card-container mdl-shadow--4dp">
@@ -147,7 +147,7 @@
                   <div class="festival-title">
                     <h5><%= e[:title]%></h5>
                   </div>
-                  <div class="overlay mdl-color--primary"></div>
+                  <div class="overlay mdl-color--accent"></div>
                 </div>
                 <div class="festival-info">
                   <div><h5><%= e[:venue][:name]%></h5></div>
@@ -171,7 +171,7 @@
                   
                   <div class="tickets-link" id="link-btn">
                     <a href=<%=festival_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent mdl-color--primary">
-                        LEARN MORE
+                        INFO
                     </a>
                   </div>
                 </div>
@@ -200,7 +200,7 @@
                   <div class="festival-title">
                     <h5><%= e[:title]%></h5>
                   </div>
-                  <div class="overlay mdl-color--primary"></div>
+                  <div class="overlay mdl-color--accent"></div>
                 </div>
                 <div class="festival-info">
                   <div><h5><%= e[:venue][:name]%></h5></div>
@@ -224,7 +224,7 @@
                   
                   <div class="tickets-link" id="link-btn">
                     <a href=<%=festival_path(e[:id]) %> class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--accent mdl-color--primary">
-                        LEARN MORE
+                        INFO
                     </a>
                   </div>
                 </div>
