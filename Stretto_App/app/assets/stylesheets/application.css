@@ -365,3 +365,74 @@ div:nth-child(1) > i {
     text-decoration: none;
 }
 
+
+/* User Pages - Login - Signup - User Profile */
+
+.field em { 
+    font-size: 8pt;
+    margin-left: 30%;
+}
+
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e53935;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    height: 50vh;
+}
+
+.sign-up-frame input {
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background-color: transparent;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 20pt;
+}
+
+.sign-up-frame label{
+    font-size: 14pt;
+    padding-top: 10%;
+}
+
+.email,
+.password,
+.confirmation {
+    padding-top: 10px;
+}
+
+.actions button {
+    height: 20%;
+    background: #4DB6AC;
+}
+
+.actions button input {
+    border: none;
+}
+
+.sign-up-title h2 {
+    margin-left: 20px;
+    padding-top: 20px;
+    color: black;
+}
+
+.sign-up-background {
+    width: 100%;
+    height: 95vh;
+    background: url("https://static.pexels.com/photos/93490/pexels-photo-93490.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.log-in-link {
+    font-size: 14pt;
+    margin-left: 5px;
+}
+
+
