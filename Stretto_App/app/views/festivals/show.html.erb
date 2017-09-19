@@ -39,7 +39,42 @@
               <h4><%= @res[:venue][:address] %></h4>
               <h4><%= @res[:venue][:display_location] %></h4>
               <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
-              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post %>
+
+              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post, id: "faves", class: "mdl-button mdl-js-button mdl-button--raised"%>
+              <div id="fave-pop" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+              </div>
+              <% if flash.now %>
+                <script>
+                  (function() {
+                    'use strict';
+                    var snackbarContainer = document.querySelector('#fave-pop');
+                    var showFaveButton = document.querySelector('#faves');
+                    showFaveButton.addEventListener('click', function() {
+                      'use strict';
+                      var data = {message: 'Added to Favorites!'};
+                      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                    });
+                  }());
+                </script>
+              
+              <% else %>
+
+                <script>
+                  (function() {
+                    'use strict';
+                    var snackbarContainer = document.querySelector('#fave-pop');
+                    var showFaveButton = document.querySelector('#faves');
+                    showFaveButton.addEventListener('click', function() {
+                      'use strict';
+                      var data = {message: 'Sign in to add favorites'};
+                      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                    });
+                  }());
+                </script>
+
+              <% end %>
               <br>
               <div class="buy-now-btn">
                 <button class="mdl-button mdl-js-button"><a class="mdl-color-text--teal-50" href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
