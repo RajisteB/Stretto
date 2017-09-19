@@ -28,38 +28,39 @@
         <br>
         <div class"page-header">
         <div class="s-pg-grid-flex">
-        <div class="s-pg-layout mdl-shadow--8dp">
-          <div class="header-pic" style='background-image: url(<%= @res[:performers][0][:image] %>);
-                background-size: cover; background-repeat: no-repeat;' />
-          </div>
-          <br>
-          <h3><%= @res[:title]%></h3>
-          <h3><%= @res[:venue][:name] %></h3>
-          <h4><%= @res[:venue][:address] %></h4>
-          <h4><%= @res[:venue][:display_location] %></h4>
-          <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
-          <br>
-          <br>
-          <button class="mdl-button mdl-js-button mdl-button--raised"><a href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
-          </button>
-          <br>
-          <br>
-          <% @res[:performers].each do |p|%>
-              <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
-                  <div><%= p[:short_name]%></div>
+        <div class="s-pg-layout">
+          <div class="header-container">
+            <div class="header-pic mdl-shadow--8dp" style='background-image: url(<%= @res[:performers][0][:image] %>);
+                  background-size: cover; background-repeat: no-repeat; background-position: center center;' />
+            </div>
+            <div class="header-info mdl-color--teal-400 mdl-shadow--8dp">
+              <h3><%= @res[:title]%></h3>
+              <h3><%= @res[:venue][:name] %></h3>
+              <h4><%= @res[:venue][:address] %></h4>
+              <h4><%= @res[:venue][:display_location] %></h4>
+              <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
+              <br>
+              <div class="buy-now-btn">
+                <button class="mdl-button mdl-js-button"><a class="mdl-color-text--teal-50" href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+                </button>
+              </div>
+            </div>
+            <div class="performer-info">
+              <% @res[:performers].each do |p|%>
+                  <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
+                      <div>- <%= p[:short_name]%></div>
+                  <% end %>
               <% end %>
-          <% end %>
-          <br>
+            </div>
+          </div>
         </div>
+    </div>
         <div class="recommendations">
-          <h1 class="mdl-color-text--accent">Recommendations</h1>
+          <h1 class="mdl-color-text--accent">You may also be interested in...</h1>
           <div class="s-artist-rec">
             <% @rec[:recommendations].each do |r| %>
                   <div class="rec-artist-card">
-                    <div class="rec-card-img mdl-shadow--6dp" style='background-image: url(<%= r[:performer][:image] %>);' />
-                      <div class="rec-overlay mdl-color--accent"></div>
-                    </div>
-                    <div class="rec-info mdl-shadow--6dp">
+                    <div class="rec-info">
                       <div class="rec-name ">
                         <%= r[:performer][:short_name] %>
                       </div>
@@ -68,7 +69,6 @@
             <% end %>
           </div>
         </div>
-    </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
   </main>

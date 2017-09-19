@@ -21,7 +21,13 @@
 /* MDL modifications */
 
 .mdl-layout__drawer-button i {
-    color: cyan;
+    color: white;
+    font-size: 26px;
+}
+
+.mdl-layout__drawer-button {
+     margin-top: 4px;
+     margin-bottom: 4px;
 }
 
 .mdl-layout-title a {
@@ -43,7 +49,7 @@
 
 body {
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.90);
+    background: rgba(0, 0, 0, 0.80);
     font-family: "Roboto", sans-serif;
     color: white;
 }
@@ -255,33 +261,57 @@ div:nth-child(1) > i {
 /* Single page styling */
 
 .header-pic {
+    width: 35%;
+    height: 350px;
+}
+
+.header-container {
+    display: flex;
     width: 100%;
-    height: 37vh;
+    justify-content: space-around;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    padding: 10px;
+}
+
+.performer-info {
+    width: 15%;
+    padding: 10px;
+    font-size: 12pt;
 }
 
 .s-pg-layout {
     margin: 0 auto;
-    width: 40%;
+    width: 80%;
     display: flex;
-    background-color: rgba(250, 250, 250, 0.02); 
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80%;
+    height: 100%;
     margin-top: 2%;
     flex-direction: column;
-    border: 2px solid #009688;
+}
+
+.buy-now-btn {
+    width: 100%;
+    border-top: 1px solid white;
 }
 
 .s-pg-layout button {
     font-size: 12pt;
-    background: black;
+    width: 100%;
 }
 
 .s-pg-grid-flex {
     width: 96%;
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    height: 100vh;
+    height: 50vh;
 }
 
 .recommendations {
@@ -293,21 +323,21 @@ div:nth-child(1) > i {
 
 .recommendations h1 {
     font-weight: 100;
+    font-size: 20pt;
 }
 
 
 .rec-info {
     width: 20%;
     height: 20%;
-    border: 2px solid #009688;
 }
 
 .s-artist-rec {
     display: flex;
-    flex-wrap: wrap;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    height: 80%;
+    width: 98vw;
 }
 
 .rec-artist-card {
@@ -337,7 +367,7 @@ div:nth-child(1) > i {
 .rec-name {
     width: 50%;
     margin-left: 3px;
-    border-bottom: 1px solid #009688;
+    border-bottom: 3px solid #009688;
 }
 
 .rec-card-img {
