@@ -42,8 +42,11 @@ class FestivalsController <ApplicationController
         
     end
 
-    private
-        @user_fav = 
+    def favorite
+        fest_id = params[:fest_id]
+        Favorite.create!(fest_id: fest_id, user_id: current_user.id)
+        render json: {message: 'created'}
     end
+
 
 end

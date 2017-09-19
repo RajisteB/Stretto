@@ -1,3 +1,4 @@
 class Festival < ApplicationRecord
-    belongs_to :user
+    has_many :users, :through => :favorites
+    has_many :favorites
 end

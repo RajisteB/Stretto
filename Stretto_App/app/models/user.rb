@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :festivals
+  has_many :favorites
+  has_many :favorites, :through => :festivals
 end

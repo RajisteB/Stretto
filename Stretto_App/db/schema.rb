@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20170919142717) do
   end
 
   create_table "festivals", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "picture_url"
+    t.string "date_time"
+    t.string "tickets_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
