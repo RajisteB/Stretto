@@ -45,7 +45,9 @@ class FestivalsController <ApplicationController
     def favorite
         fest_id = params[:id]
         Favorite.create!(festival_id: fest_id, user_id: current_user.id)
-        flash.now
+        if Favorite.create!(user_id: current_user.id)
+            flash.now
+        end
     end
 
 
