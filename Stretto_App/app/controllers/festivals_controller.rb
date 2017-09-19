@@ -43,11 +43,13 @@ class FestivalsController <ApplicationController
     end
 
     def favorite
+        @seatgeek = Rails.application.secrets.seat_geek_api_key
+        response = HTTParty.get("https://api.seatgeek.com/2/events/#{params[:id]}?client_id=#{@seatgeek}") 
+        res = JSON.parse response.to_s, symbolize_names: true
+        name = res[:title]
         fest_id = params[:id]
-        Favorite.create!(festival_id: fest_id, user_id: current_user.id)
-        if Favorite.create!(user_id: current_user.id)
-            flash.now
-        end
+        Favorite.create!(festival_id: fest_id, user_id: current_user.id, name: name)
+        flash.now
     end
 
 
