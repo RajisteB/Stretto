@@ -37,4 +37,13 @@ class FestivalsController <ApplicationController
         
     end
 
+
+    def create 
+        
+    end
+
+    private
+        @user_fav = 
+    end
+
 end
