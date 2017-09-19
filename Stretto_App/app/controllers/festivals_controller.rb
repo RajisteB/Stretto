@@ -47,9 +47,9 @@ class FestivalsController <ApplicationController
         response = HTTParty.get("https://api.seatgeek.com/2/events/#{params[:id]}?client_id=#{@seatgeek}") 
         res = JSON.parse response.to_s, symbolize_names: true
         name = res[:title]
-        venue = @res[:venue][:name]
-        location = @res[:venue][:display_location]
-        datetime = @res[:datetime_local].to_date.strftime("%B %d, %Y")
+        venue = res[:venue][:name]
+        location = res[:venue][:display_location]
+        datetime = res[:datetime_local].to_date.strftime("%B %d, %Y")
         fest_id = params[:id]
         Favorite.create!(festival_id: fest_id, user_id: current_user.id, name: name, venue: venue, location: location, datetime: datetime)
         flash.now

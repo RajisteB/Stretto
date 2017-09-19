@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20170919142717) do
     t.integer "festival_id"
     t.integer "user_id"
     t.string "name"
+    t.string "venue"
+    t.string "location"
+    t.string "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
