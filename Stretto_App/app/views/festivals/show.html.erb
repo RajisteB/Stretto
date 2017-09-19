@@ -39,6 +39,7 @@
               <h4><%= @res[:venue][:address] %></h4>
               <h4><%= @res[:venue][:display_location] %></h4>
               <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
+              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post %>
               <br>
               <div class="buy-now-btn">
                 <button class="mdl-button mdl-js-button"><a class="mdl-color-text--teal-50" href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>

@@ -44,7 +44,7 @@ class FestivalsController <ApplicationController
 
     def favorite
         fest_id = params[:id]
-        Favorite.create!(fest_id: fest_id, user_id: current_user.id)
+        Favorite.create!(festival_id: fest_id, user_id: current_user.id)
         render json: {message: 'created'}
     end
 

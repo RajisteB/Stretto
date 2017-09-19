@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root to: 'festivals#home'
   get 'users/:id' => 'festivals#profile', as: 'profile'
   resources :festivals
-
+  post 'festivals/:id' => 'festivals#favorite', as: 'favorite'
 end
