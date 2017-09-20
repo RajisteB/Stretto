@@ -44,6 +44,11 @@
     letter-spacing: 2px;
 }
 
+#fave-pop{
+    display: inline;
+    font-size: 22pt;
+    text-align: center;
+}
 
 /* Site styling */
 
