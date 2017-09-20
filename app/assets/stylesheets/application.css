@@ -92,7 +92,7 @@ body {
 .coverr {
     height: 100%;
     width: 100%;
-    background-image: url("homepgparty.jpg"); 
+    background: url("homepgparty.jpg"); 
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -362,7 +362,7 @@ div:nth-child(1) > i {
 .show-background {
     height: 100%;
     width: 100%;
-    background-image: url("noisey.jpg");
+    background: url("noisey.jpg");
     background-size: cover;
 
 }
@@ -516,7 +516,7 @@ table {
 .fav-background {
     height: 100%;
     width: 100%;
-    background-image: url('nick-green-crowd.jpg');
+    background: url('nick-green-crowd.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
