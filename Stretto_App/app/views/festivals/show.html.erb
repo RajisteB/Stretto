@@ -7,10 +7,14 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href=<%= festivals_path%>>Explore</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link mdl-color-text--white" href=<%= festivals_path%>>Explore</a>
+        <% if user_signed_in? %>
+        <%= link_to('Profile', profile_path, class: "mdl-navigation__link mdl-color-text--white") %>
+        <%= link_to('Favorites', saved_path, class: "mdl-navigation__link mdl-color-text--white") %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "mdl-navigation__link mdl-color-text--white") %>
+        <% else %>
+        <%= link_to('Login', new_user_session_path, class: "mdl-navigation__link mdl-color-text--white") %>
+      <% end %>
       </nav>
     </div>
   </header>
@@ -26,95 +30,94 @@
       <% end %>
     </nav>
   </div>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-        <br>
-        <div class"page-header">
-        <div class="s-pg-grid-flex">
-        <div class="s-pg-layout">
-          <div class="header-container">
-            <div class="header-pic mdl-shadow--8dp" style='background-image: url(<%= @res[:performers][0][:image] %>);
-                  background-size: cover; background-repeat: no-repeat; background-position: center center;' />
-            </div>
-            <div class="header-info mdl-color--teal-400 mdl-shadow--8dp">
-              <h3><%= @res[:title]%></h3>
-              <br>
-              <h5><%= @res[:venue][:name] %></h5>
-              <h5><%= @res[:venue][:address] %></h5>
-              <h5><%= @res[:venue][:display_location] %></h5>
-              <h5><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h5>
-              <br>
-              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post, id: "faves", class: "mdl-button mdl-js-button mdl-button--raised mdl-color--primary mdl-color-text--teal-50"%>
-              <div id="fave-pop" class="mdl-js-snackbar mdl-snackbar">
-                <div class="mdl-snackbar__text"></div>
-                <button class="mdl-snackbar__action" type="button"></button>
-              </div>
-              <% if flash.now %>
-                <script>
-                  (function() {
-                    'use strict';
-                    var snackbarContainer = document.querySelector('#fave-pop');
-                    var showFaveButton = document.querySelector('#faves');
-                    showFaveButton.addEventListener('click', function() {
+  <div class="show-background">
+    <main class="mdl-layout__content">
+      <div class="page-content">
+          <br>
+          <div class"page-header">
+          <div class="s-pg-grid-flex">
+          <div class="s-pg-layout">
+            <div class="header-container">
+              <div class="header-info mdl-color--teal-400 mdl-shadow--8dp">
+                <h3><%= @res[:title]%></h3>
+                <br>
+                <h5><%= @res[:venue][:name] %></h5>
+                <h5><%= @res[:venue][:address] %></h5>
+                <h5><%= @res[:venue][:display_location] %></h5>
+                <h5><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h5>
+                <br>
+                <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post, id: "faves", class: "mdl-button mdl-js-button mdl-button--raised mdl-color--primary mdl-color-text--teal-50"%>
+                <div id="fave-pop" class="mdl-js-snackbar mdl-snackbar">
+                  <div class="mdl-snackbar__text"></div>
+                  <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+                <% if flash.now %>
+                  <script>
+                    (function() {
                       'use strict';
-                      var data = {message: 'Added to Favorites!'};
-                      snackbarContainer.MaterialSnackbar.showSnackbar(data);
-                    });
-                  }());
-                </script>
-              
-              <% else %>
+                      var snackbarContainer = document.querySelector('#fave-pop');
+                      var showFaveButton = document.querySelector('#faves');
+                      showFaveButton.addEventListener('click', function() {
+                        'use strict';
+                        var data = {message: 'Added to Favorites!'};
+                        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                      });
+                    }());
+                  </script>
+                
+                <% else %>
 
-                <script>
-                  (function() {
-                    'use strict';
-                    var snackbarContainer = document.querySelector('#fave-pop');
-                    var showFaveButton = document.querySelector('#faves');
-                    showFaveButton.addEventListener('click', function() {
+                  <script>
+                    (function() {
                       'use strict';
-                      var data = {message: 'Sign in to add favorites'};
-                      snackbarContainer.MaterialSnackbar.showSnackbar(data);
-                    });
-                  }());
-                </script>
+                      var snackbarContainer = document.querySelector('#fave-pop');
+                      var showFaveButton = document.querySelector('#faves');
+                      showFaveButton.addEventListener('click', function() {
+                        'use strict';
+                        var data = {message: 'Sign in to add favorites'};
+                        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                      });
+                    }());
+                  </script>
 
-              <% end %>
-              <br>
-              <div class="buy-now-btn">
-                <button class="mdl-button mdl-js-button"><a class="mdl-color-text--teal-50" href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
-                </button>
+                <% end %>
+                <br>
+                <div class="buy-now-btn">
+                  <button class="mdl-button mdl-js-button"><a class="mdl-color-text--teal-50" href=<%= @res[:url]%> target="_blank">BUY TICKETS</a>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="performer-info mdl-color-text--accent">
-              <div class="mdl-color-text--teal-50">Starring:</div>
-              <br>
-              <% @res[:performers].each do |p|%>
-                  <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
-                      <div><%= p[:short_name]%></div>
-                  <% else %>
-                    <h3>TBD</h3>
-                  <% end %>
-              <% end %>
+              <div class="performer-info mdl-color-text--accent">
+                <div class="mdl-color-text--teal-50">Starring:</div>
+                <br>
+                <% @res[:performers].each do |p|%>
+                    <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
+                        <div><%= p[:short_name]%></div>
+                    <% else %>
+                      <h3>TBD</h3>
+                    <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-        <div class="recommendations">
-          <h1 class="mdl-color-text--accent">You may also be interested in...</h1>
-          <div class="s-artist-rec">
-            <% @rec[:recommendations].each do |r| %>
-                  <div class="rec-artist-card">
-                    <div class="rec-info">
-                      <div class="rec-name ">
-                        <h6><%= r[:performer][:short_name] %></h6>
+      </div>
+          <div class="recommendations">
+            <h1 class="mdl-color-text--accent">You may also be interested in...</h1>
+            <div class="s-artist-rec">
+              <% @rec[:recommendations].each do |r| %>
+                    <div class="rec-artist-card">
+                      <div class="rec-info">
+                        <div class="rec-name ">
+                          <h6><%= r[:performer][:short_name] %></h6>
+                        </div>
                       </div>
                     </div>
-                  </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-  </main>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+    </main>
+  </div>
 </div>
 

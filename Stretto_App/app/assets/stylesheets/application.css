@@ -354,6 +354,14 @@ div:nth-child(1) > i {
     font-size: 12pt;
 }
 
+.show-background {
+    height: 100%;
+    width: 100%;
+    background-image: url("noisey.jpg");
+    background-size: cover;
+    
+}
+
 .rec-info {
     width: 45%;
     height: 90%;
