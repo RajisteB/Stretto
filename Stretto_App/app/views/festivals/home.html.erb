@@ -9,8 +9,7 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link mdl-color-text--white" href=<%= festivals_path%>>Explore</a>
         <% if user_signed_in? %>
-        <%= link_to('Profile', profile_path, class: "mdl-navigation__link mdl-color-text--white") %>
-        <%= link_to('Favorites', saved_path, class: "mdl-navigation__link mdl-color-text--white") %>
+        <%= link_to('Favorites', saved_path(current_user.id), class: "mdl-navigation__link mdl-color-text--white") %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "mdl-navigation__link mdl-color-text--white") %>
         <% else %>
         <%= link_to('Login', new_user_session_path, class: "mdl-navigation__link mdl-color-text--white") %>
