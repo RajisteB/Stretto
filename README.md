@@ -7,8 +7,7 @@ Description ...
 
 ### WireFrame
 
-![Homepage ScreenShot]
-(./app/assets/images/stretto-home.png)
+![Homepage ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/stretto-home.png)
 
 
 ### 1. Setup
