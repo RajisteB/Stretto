@@ -7,20 +7,23 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href=<%= festivals_path%>>Festivals</a>
+        <a class="mdl-navigation__link" href=<%= festivals_path%>>Explore</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
+  <div class="mdl-layout__drawer mdl-color--grey-900">
+    <span class="mdl-layout-title mdl-color-text--accent">Stretto</span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link mdl-color-text--primary" href=<%= festivals_path %>>Explore</a>
+      <% if user_signed_in? %>
+        <a class="mdl-navigation__link mdl-color-text--primary" href=<%= saved_path(current_user.id) %>>Favorites</a>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "mdl-navigation__link mdl-color-text--primary") %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path, class: "mdl-navigation__link mdl-color-text--primary") %>
+      <% end %>
     </nav>
   </div>
   <main class="mdl-layout__content">

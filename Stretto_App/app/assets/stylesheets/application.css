@@ -44,12 +44,13 @@
     letter-spacing: 2px;
 }
 
+
 /* Site styling */
 
 
 body {
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.90);
+    background: rgba(0, 0, 0, 0.86);
     font-family: "Roboto", sans-serif;
     color: white;
 }
