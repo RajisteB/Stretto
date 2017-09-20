@@ -8,7 +8,7 @@ Description ...
 ### WireFrame
 
 ![Homepage ScreenShot]
-(app/assets/images/stretto-home.png)
+(./app/assets/images/stretto-home.png)
 
 
 ### 1. Setup
