@@ -11,7 +11,7 @@ class FestivalsController <ApplicationController
     end
 
     def index
-        @seatgeek = Rails.application.secrets.seat_geek_api_key
+        @seatgeek = Rails.application.secrets.seat_geek_api_key || ENV['seat_geek_api_key']
         response = HTTParty.get("https://api.seatgeek.com/2/events?sort=score.desc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
         recent = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
         near = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&geoip=true&client_id=#{@seatgeek}")
@@ -24,8 +24,8 @@ class FestivalsController <ApplicationController
 
     def show
         params[:id]
-        @seatgeek = Rails.application.secrets.seat_geek_api_key
-        @map = Rails.application.secrets.google_maps_api_key
+        @seatgeek = Rails.application.secrets.seat_geek_api_key || ENV['seat_geek_api_key']
+        @map = Rails.application.secrets.google_maps_api_key || ENV['google_maps_api_key']
         response = HTTParty.get("https://api.seatgeek.com/2/events/#{params[:id]}?client_id=#{@seatgeek}") 
         @res = JSON.parse response.to_s, symbolize_names: true
         @performer_id = @res[:performers][0][:id]
