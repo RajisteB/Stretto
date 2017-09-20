@@ -4,6 +4,13 @@ Description ...
 
 ## Planning & Steps
 
+
+### WireFrame
+
+![Homepage ScreenShot]
+(app/assets/images/stretto-home.png)
+
+
 ### 1. Setup
 - [x] create file and init git repo
 - [x] init Rails app
@@ -48,4 +55,5 @@ Description ...
 - [x] style cards for each individual event
 - [x] layout cards via flexbox grid
 - [x] style other pages (home, single, favorites, user)
+- [x] deploy to Heroku
 
