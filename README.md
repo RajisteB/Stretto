@@ -1,13 +1,27 @@
 # Stretto
+[Homepage ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/stretto-home.png)
 
-Description ...
+Stretto is a music festival "finder" app that allows users to find local or national
+music festivals and follow their own favorites!
+
+## User Stories
+
+[Login ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/Log-Screen.png)
+
+As a Stretto user, I should be able to 
+
+- Find local/national festivals
+- Get info on those festivals (additional performers, artist recommendations)
+- Be able to buy tickets through SeatGeek
+- "Favorite" the festivals that I want to keep track of
+- Delete festivals that I've tracked
+- Sign in/out with email and password
+
 
 ## Planning & Steps
 
 
 ### WireFrame
-
-![Homepage ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/stretto-home.png)
 
 
 ### 1. Setup
@@ -55,4 +69,30 @@ Description ...
 - [x] layout cards via flexbox grid
 - [x] style other pages (home, single, favorites, user)
 - [x] deploy to Heroku
+
+
+## Technologies Used
+
+- Ruby on Rails
+- HTTPary gem
+- Wikipedia API (gem)
+- SeatGeek API
+- Google Material Design Lite Front-End Framework
+
+Code Snippet:
+...Code for Index method with multiple API calls being parsed into JSON
+
+```
+def index
+        @seatgeek = Rails.application.secrets.seat_geek_api_key || ENV['SEAT_GEEK_API_KEY']
+        response = HTTParty.get("https://api.seatgeek.com/2/events?sort=score.desc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
+        recent = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&client_id=#{@seatgeek}") 
+        near = HTTParty.get("https://api.seatgeek.com/2/events?sort=datetime_utc.asc&q=music+festival&per_page=52&geoip=true&client_id=#{@seatgeek}")
+        newly_announced = HTTParty.get("https://api.seatgeek.com/2/events?sort=announce_date.desc&q=music+festival&per_page=25&client_id=#{@seatgeek}")  
+        @res = JSON.parse response.to_s, symbolize_names: true
+        @recent = JSON.parse recent.to_s, symbolize_names: true
+        @near = JSON.parse near.to_s, symbolize_names: true
+        @newly = JSON.parse newly_announced.to_s, symbolize_names: true
+    end
+```
 
