@@ -27,12 +27,19 @@
       <% end %>
     </nav>
   </div>
-<div style="color:white;">
-Hello favorites page
-<%= @faves.each do |f| %>
-    <%= f[:name] %>
-    <%= f[:venue] %>
-    <%= f[:location] %>
-    <%= f[:datetime] %>
-<% end %>
+
+<div class="fav-background">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-color--primary">
+    <% @faves.each do |f| %>
+        <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric mdl-color-text--purple-50 table_data" style="font-size: 14pt; font-weight: 200;"><%= f[:name] %></th>
+                <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:venue] %></th>
+                <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:location] %></th>
+                <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:datetime] %></th>
+                <th class="mdl-color-text--purple-50" style="font-size: 14pt;"><i class="material-icons" style="font-weight: 800;">clear</i></th>
+            </tr>
+        </thead>
+    <% end %>
+    </table>
 </div>

@@ -49,7 +49,7 @@
 
 body {
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.80);
+    background: rgba(0, 0, 0, 0.90);
     font-family: "Roboto", sans-serif;
     color: white;
 }
@@ -470,4 +470,33 @@ div:nth-child(1) > i {
     justify-content: space-between;
     margin: 5px;
     width: 60%;
+}
+
+
+/* User Favorites */
+
+th {
+    font-family: 'Roboto', sans-serif;
+}
+
+th i {
+    position: relative;
+    top: 6px;
+}
+
+thead:hover {
+    background: rgba(0, 0, 0, 0.80);
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.fav-background {
+    height: 100%;
+    width: 100%;
+    background-image: url('nick-green-crowd.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
