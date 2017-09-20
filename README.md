@@ -28,23 +28,24 @@ Description ...
 
 
 ### 3. Database
-- [] add table for user favorites
-- [] add table for festivals saved
-- [] rails db:migrate
-- [] rails db:seed
-- [] rails c to test migrations/seeds
+- [x] add table for user favorites
+- [x] add table for festivals saved
+- [x] rails db:migrate
+- [x] rails db:seed
+- [x] rails c to test migrations/seeds
 
 ### 4. CRUD Functionality
-- [] create user route to user/favorites page
-- [] config save and delete functionality
-- [] test and confirm user favorites get added to db
-- [] test and confirm user favorites displayed on user page
+- [x] create user route to user/favorites page
+- [x] config save and delete functionality
+- [x] test and confirm user favorites get added to db
+- [x] test and confirm user favorites displayed on user page
 
 
 ### 5. Styling
 - [x] install MDL - Material Design Lite
 - [x] create navbar
-- [] create navbar w/ tabs partial for index page
+- [x] create navbar w/ tabs for index page
 - [x] style cards for each individual event
-- [] layout cards via MDL grid
+- [x] layout cards via flexbox grid
+- [x] style other pages (home, single, favorites, user)
 
