@@ -38,12 +38,13 @@
             </div>
             <div class="header-info mdl-color--teal-400 mdl-shadow--8dp">
               <h3><%= @res[:title]%></h3>
-              <h3><%= @res[:venue][:name] %></h3>
-              <h4><%= @res[:venue][:address] %></h4>
-              <h4><%= @res[:venue][:display_location] %></h4>
-              <h4><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h4>
-
-              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post, id: "faves", class: "mdl-button mdl-js-button mdl-button--raised"%>
+              <br>
+              <h5><%= @res[:venue][:name] %></h5>
+              <h5><%= @res[:venue][:address] %></h5>
+              <h5><%= @res[:venue][:display_location] %></h5>
+              <h5><%= @res[:datetime_local].to_date.strftime("%B %d, %Y") %></h5>
+              <br>
+              <%= button_to "Add to Favorites", favorite_path(@res[:id]), method: :post, id: "faves", class: "mdl-button mdl-js-button mdl-button--raised mdl-color--primary mdl-color-text--teal-50"%>
               <div id="fave-pop" class="mdl-js-snackbar mdl-snackbar">
                 <div class="mdl-snackbar__text"></div>
                 <button class="mdl-snackbar__action" type="button"></button>
@@ -84,10 +85,14 @@
                 </button>
               </div>
             </div>
-            <div class="performer-info">
+            <div class="performer-info mdl-color-text--accent">
+              <div class="mdl-color-text--teal-50">Starring:</div>
+              <br>
               <% @res[:performers].each do |p|%>
                   <% if @res[:short_title].split(" ")[0].downcase != p[:short_name].split(" ")[0].downcase %>
-                      <div>- <%= p[:short_name]%></div>
+                      <div><%= p[:short_name]%></div>
+                  <% else %>
+                    <h3>TBD</h3>
                   <% end %>
               <% end %>
             </div>
@@ -101,7 +106,7 @@
                   <div class="rec-artist-card">
                     <div class="rec-info">
                       <div class="rec-name ">
-                        <%= r[:performer][:short_name] %>
+                        <h6><%= r[:performer][:short_name] %></h6>
                       </div>
                     </div>
                   </div>

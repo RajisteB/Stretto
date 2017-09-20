@@ -278,12 +278,15 @@ div:nth-child(1) > i {
     justify-content: space-between;
     width: 35%;
     padding: 10px;
+    height: 55%;
 }
 
 .performer-info {
     width: 15%;
     padding: 10px;
     font-size: 12pt;
+    font-weight: 100;
+    letter-spacing: 1px;
 }
 
 .s-pg-layout {
@@ -328,10 +331,6 @@ div:nth-child(1) > i {
 }
 
 
-.rec-info {
-    width: 20%;
-    height: 20%;
-}
 
 .s-artist-rec {
     display: flex;
@@ -344,12 +343,15 @@ div:nth-child(1) > i {
 .rec-artist-card {
     width: 45%;
     height: 30%;
-    padding: 6px;
     font-weight: 100;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.s-artist-rec {
+    font-size: 12pt;
 }
 
 .rec-info {
@@ -366,8 +368,7 @@ div:nth-child(1) > i {
 }
 
 .rec-name {
-    width: 50%;
-    margin-left: 3px;
+    width: 60%;
     border-bottom: 3px solid #009688;
 }
 
@@ -385,7 +386,7 @@ div:nth-child(1) > i {
 }
 
 .s-pg-layout h3, 
-.s-pg-layout h4 {
+.s-pg-layout h5 {
     font-weight: 100;
     margin: 0;
 }
