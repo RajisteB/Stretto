@@ -1,0 +1,38 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><%= link_to 'Stretto', root_path %> </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href=<%= festivals_path%>>Explore</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "mdl-navigation__link") %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path, class: "mdl-navigation__link") %>
+      <% end %>
+    </nav>
+  </div>
+<div style="color:white;">
+Hello favorites page
+<%= @faves.each do |f| %>
+    <%= f[:name] %>
+    <%= f[:venue] %>
+    <%= f[:location] %>
+    <%= f[:datetime] %>
+<% end %>
+</div>

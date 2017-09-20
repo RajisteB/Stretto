@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'users/:id' => 'festivals#profile', as: 'profile'
   resources :festivals
   post 'festivals/:id' => 'festivals#favorite', as: 'favorite'
+  get 'users/:id/fav' => 'festivals#saved', as: 'saved'
 end
