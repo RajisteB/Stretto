@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :festivals
   post 'festivals/:id' => 'festivals#favorite', as: 'favorite'
   get 'users/:id/fav' => 'festivals#saved', as: 'saved'
+  delete 'users/:id/fav' => 'festivals#deleted', as: 'deleted'
 end

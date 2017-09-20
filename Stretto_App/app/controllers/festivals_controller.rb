@@ -59,5 +59,11 @@ class FestivalsController <ApplicationController
         @faves = Favorite.where(user_id: current_user.id)
     end
 
+    def deleted
+        @faves_delete = Favorite.find(params[:id])
+        @faves_delete.destroy
+        redirect_to saved_path
+    end
+
 
 end

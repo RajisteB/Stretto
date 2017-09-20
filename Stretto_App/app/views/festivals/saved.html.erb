@@ -40,7 +40,7 @@
                 <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:venue] %></th>
                 <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:location] %></th>
                 <th class="mdl-color-text--purple-50" style="font-size: 14pt; font-weight: 200;"><%= f[:datetime] %></th>
-                <th class="mdl-color-text--purple-50" style="font-size: 14pt;"><i class="material-icons" style="font-weight: 800;">clear</i></th>
+                <th class="mdl-color-text--purple-50" style="font-size: 14pt;"><i class="material-icons" style="font-weight: 800;"><%= link_to('clear', deleted_path(f[:id]), method: :delete)%></i></th>
             </tr>
         </thead>
     <% end %>
