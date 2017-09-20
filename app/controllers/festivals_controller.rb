@@ -1,5 +1,5 @@
-require 'Httparty'
-require 'Wikipedia'
+# require 'Httparty'
+# require 'Wikipedia'
 
 class FestivalsController <ApplicationController
     include HTTParty
