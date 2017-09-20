@@ -1,12 +1,12 @@
 # Stretto
-[Homepage ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/stretto-home.png)
+[Homepage ScreenShot](https://github.com/Cityslick/Stretto/tree/master/app/assets/images/stretto-home.png)
 
 Stretto is a music festival "finder" app that allows users to find local or national
 music festivals and follow their own favorites!
 
 ## User Stories
 
-[Login ScreenShot](https://github.com/Cityslick/Stretto/blob/master/app/assets/images/Log-Screen.png)
+[Login ScreenShot](https://github.com/Cityslick/Stretto/tree/master/app/assets/images/Log-Screen.png)
 
 As a Stretto user, I should be able to 
 
